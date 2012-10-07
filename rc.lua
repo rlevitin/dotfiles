@@ -595,6 +595,8 @@ awful.rules.rules = {
     -- 5: media
     { rule = { class = "MPlayer" },
       properties = { tag = tags[mouse.screen][5], switchtotag = true, floating = true } },
+    { rule = { class = "Vlc" },
+      properties = { tag = tags[mouse.screen][5], switchtotag = true, floating = true } },
     { rule = { class = "Gimp" },
       properties = { tag = tags[mouse.screen][5], switchtotag = true, floating = true } },
     { rule = { class = "Deluge" },
