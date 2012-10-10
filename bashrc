@@ -79,7 +79,9 @@ alias paclocs='pacman-color -Qs'             # Search for package(s) in the loca
 alias pacinsd='sudo pacman-color -S --asdeps'        # Install given package(s) as dependencies of another package
 alias pacmir='sudo pacman-color -Syy'                # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
+# My Aliases
 alias builds='cd ~/.builds'
+alias gcal='gcalcli --width=20 calw 1'
 
 # Alias some common commands to useful flags
 alias ls='ls --color=auto'

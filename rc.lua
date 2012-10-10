@@ -238,7 +238,7 @@ pacicon.image = image(beautiful.widget_pac)
 -- Pacman Widget
 pacwidget = widget({type = "textbox"})
 pacwidget_t = awful.tooltip({ objects = { pacwidget},})
-vicious.register(pacwidget, vicious.widgets.pkg, "$1", 3600, "Arch")
+vicious.register(pacwidget, vicious.widgets.pkg, "$1", 93, "Arch")
 
 -- MPD Icon
 mpdicon = widget({ type = "imagebox" })
@@ -616,7 +616,19 @@ awful.rules.rules = {
 client.add_signal("manage", function (c, startup)
     -- Add a titlebar
     -- awful.titlebar.add(c, { modkey = modkey })
+	-- put this in your "manage" signal handler
+	c:add_signal("property::urgent", function(c)
+		if c.urgent then
+			-- Change the border color of the urgent window.
+			-- You'll need to define the color in your theme.lua, e.g.
+			-- theme.border_urgent = "#FF3737CC"
+			-- or you set the color directly to c.border_color 
+			c.border_color = beautiful.border_urgent
 
+			-- Show a popup notification with the window title
+			naughty.notify({text="Urgent: " .. c.name})
+		end
+	end)
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function(c)
         if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
