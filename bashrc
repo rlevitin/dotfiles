@@ -15,6 +15,8 @@ export PATH="$PATH:/usr/bin/core_perl/:/opt/:~/.scripts//"
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000
 
+# Set vi Bash editing mode. Default is emacs
+set -o vi
 
 #COLORS for PS1 Prompt!
 # Reset
