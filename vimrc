@@ -17,6 +17,9 @@ set backspace=indent,eol,start		   " full backspacing capabilities
 set history=100			" 100 lines of command line history
 set ruler				" ruler display in status line
 set number				" show line numbers
+if v:version >= 703
+	set relativenumber		" show line number relative to cursor
+endif
 set showmode			" show mode at bottom of screen
 set ww=<,>,[,]			" whichwrap -- left/right keys can traverse up/down
 set cmdheight=2			" set the command height
@@ -41,9 +44,11 @@ set shiftwidth=4		" allows the use of < and > for VISUAL indenting
 set softtabstop=4		" counts n spaces when DELETE or BCKSPCE is used
 set autoindent			" auto indents next new line
 " Shortcut to rapidly toggle `set list`
+set list
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
 
 " searching
 set hlsearch			" highlight all search results

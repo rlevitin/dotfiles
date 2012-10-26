@@ -583,7 +583,11 @@ awful.rules.rules = {
     -- 3: docs
     { rule = { class = "Zathura" },
       properties = { tag = tags[mouse.screen][3], switchtotag = true } },
-    { rule = { class = "libreoffice*" },
+    { rule = { class = "libreoffice-calc" },
+      properties = { tag = tags[mouse.screen][3], switchtotag = true } },
+    { rule = { class = "libreoffice-writer" },
+      properties = { tag = tags[mouse.screen][3], switchtotag = true } },
+    { rule = { class = "libreoffice-impress" },
       properties = { tag = tags[mouse.screen][3], switchtotag = true } },
 
     -- 4: dev

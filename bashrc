@@ -84,6 +84,7 @@ alias pacmir='sudo pacman-color -Syy'                # Force refresh of all pack
 # My Aliases
 alias builds='cd ~/.builds'
 alias gcal='gcalcli --width=20 calw 1'
+alias launchtmux='tmux -2 attach-session -t main || ~/.scripts/launchtmux'
 
 # Alias some common commands to useful flags
 alias ls='ls --color=auto'
