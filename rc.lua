@@ -218,7 +218,7 @@ tempwidget = widget({ type = "textbox" })
 vicious.register(tempwidget, vicious.widgets.thermal, "$1°C", 9, {"coretemp.0", "core"})
 
 
--- Gmail Widget and Tooltip
+--[[ Gmail Widget and Tooltip
 mygmail = widget({ type = "textbox" })
 gmail_t = awful.tooltip({ objects = { mygmail },})
 
@@ -230,7 +230,7 @@ vicious.register(mygmail, vicious.widgets.gmail,
                     gmail_t:set_text(args["{subject}"])
                     gmail_t:add_to_object(mygmailimg)
                     return args["{count}"]
-                 end, 241) 
+                 end, 241) ]]--
                  
 -- Pacman Icon
 pacicon = widget({type = "imagebox" })
@@ -390,7 +390,7 @@ for s = 1, screen.count() do
     },
         space,rbracket, space, tempwidget, space, tempicon, space, lbracket,
         space, rbracket, space, pacwidget, pacicon, space, lbracket,
-        space, rbracket, space, mygmail, space, mygmailimg, space, lbracket,
+        --space, rbracket, space, mygmail, space, mygmailimg, space, lbracket,
         space, rbracket, space, music_stop, music_pause, music_play, music_next, music_prev, space, mpdwidget, space, mpdicon, space, lbracket, 
         layout = awful.widget.layout.horizontal.rightleft
     }
