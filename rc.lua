@@ -25,8 +25,8 @@ exec = awful.util.spawn
 home = os.getenv("HOME")
 
 -- Themes define colours, icons, and wallpapers
--- beautiful.init(awful.util.getdir("config") .. "/themes/zenburn/theme.lua")
 beautiful.init(awful.util.getdir("config") .. "/themes/Zoltan/theme.lua")
+-- beautiful.init(awful.util.getdir("config") .. "theme.lua")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
