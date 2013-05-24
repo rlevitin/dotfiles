@@ -29,7 +29,8 @@ set mat=5				" show matching brackets for 0.5 seconds
 " wrap like other editors
 set wrap				" word wrap
 set textwidth=80		" 
-set lbr					" line break
+set formatoptions=tcq	" automatic reformatting of paragraph as  you type
+set lbr					" line break (doesn't work with set list enabled)
 set display=lastline	" don't display @ with long paragraphs
 
 " backup settings
@@ -89,7 +90,7 @@ if has("autocmd")
 	autocmd Filetype tex,latex :let g:Tex_ViewRule_pdf = 'zathura $*.pdf &'
 	autocmd Filetype tex,latex :let g:Tex_CompileRule_pdf = 'latexmk $*.tex'
 	autocmd Filetype tex,latex :let g:Tex_DefaultTargetFormat = 'pdf'
-	let g:tex_flavor='latexmk -pdf'
+	let g:tex_flavor='latex'
 	let g:tex_viewer={'app': 'zathura', 'target':'pdf'} 
 	set background=dark
 	let g:solarized_termcolor=256

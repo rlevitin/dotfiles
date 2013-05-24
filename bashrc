@@ -10,6 +10,7 @@ export EDITOR="gvim"
 export LANG="en_US.UTF-8"
 export LOCALE="en_US.UTF-8"
 export TZ="Asia/Jerusalem"
+# export TZ="America/Toronto"
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export PATH="$PATH:/usr/bin/core_perl/:/opt/:~/.scripts//"
 export HISTCONTROL=ignoredups
@@ -73,7 +74,7 @@ alias pacins='sudo pacman-color -S'           # Install specific package(s) from
 alias pacin='sudo pacman-color -U'          # Install specific package not from the repositories but from a file 
 alias pacre='sudo pacman-color -R'           # Remove the specified package(s), retaining its configuration(s) and required dependencies
 alias pacrem='sudo pacman-color -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrep='pacman-color -Si'              # Display information about a given package in the repositories
+alias pacinfo='pacman-color -Si'              # Display information about a given package in the repositories
 alias pacreps='pacman-color -Ss'             # Search for package(s) in the repositories
 alias pacloc='pacman-color -Qi'              # Display information about a given package in the local database
 alias paclocs='pacman-color -Qs'             # Search for package(s) in the local database
@@ -85,6 +86,9 @@ alias pacmir='sudo pacman-color -Syy'                # Force refresh of all pack
 alias builds='cd ~/.builds'
 alias gcal='gcalcli --width=20 calw 1'
 alias launchtmux='tmux -2 attach-session -t main || ~/.scripts/launchtmux'
+alias ua='devmon --unmount-all --no-gui'
+alias um='udevil mount'
+alias uu='udevil umount'
 
 # Alias some common commands to useful flags
 alias ls='ls --color=auto'
@@ -108,3 +112,5 @@ alias shutdown='sudo shutdown'
 alias reboot='sudo reboot'
 
 TEXINPUTS=/home/ron/texmf/latex/pgfplots//:/home/ron/texmf/latex/gnuplot-lua-tikz//:
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
