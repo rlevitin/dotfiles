@@ -1,61 +1,90 @@
+"Ignore
+"" Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-surround'
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-speeddating'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'baskerville/vim-sxhkdrc'
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'tpope/vim-characterize'
+Bundle 'jpitblado/vim-stata'
+
+filetype on
+
 " Set runtime
-runtime autoload/pathogen.vim
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-call pathogen#infect()
+" runtime autoload/pathogen.vim
+" call pathogen#incubate()
+" call pathogen#helptags()
+" call pathogen#infect()
+
 " basics
-set t_Co=256			" set 256 color
-set nocompatible		" use Vim defaults
-set mouse=a				" make sure mouse is used in all cases.
+set t_Co=256			 "set 256 color
+set nocompatible		 " use Vim defaults
+set mouse=a				 " make sure mouse is used in all cases.
 set encoding=utf-8		" use utf-8 character encoding. (explicitly)
-"colorscheme desert		" define syntax color scheme
-set shortmess+=I		" disable the welcome screen
-set complete+=k			" enable dictionary completion
+" colorscheme desert		" define syntax color scheme
+set shortmess+=I		"disable the welcome screen
+set complete+=k			"enable dictionary completion
 set completeopt+=longest
-set clipboard+=unnamed	" yank and copy to X clipboard
-set backspace=indent,eol,start		   " full backspacing capabilities
-set history=100			" 100 lines of command line history
-set ruler				" ruler display in status line
-set number				" show line numbers
+set clipboard+=unnamed	"yank and copy to X clipboard
+set backspace=indent,eol,start		"   full backspacing capabilities
+set history=100			"100 lines of command line history
+set ruler				"ruler display in status line
+set number				"show line numbers
 if v:version >= 703
-	set relativenumber		" show line number relative to cursor
+	set relativenumber	" show line number relative to cursor
 endif
-set showmode			" show mode at bottom of screen
-set ww=<,>,[,]			" whichwrap -- left/right keys can traverse up/down
-set cmdheight=2			" set the command height
-set showmatch			" show matching brackets (),{},[]
-set mat=5				" show matching brackets for 0.5 seconds
+set showmode			"show mode at bottom of screen
+set ww=<,>,[,]			"whichwrap -- left/right keys can traverse up/down
+set cmdheight=2			"set the command height
+set showmatch			"show matching brackets (),{},[]
+set mat=5				"show matching brackets for 0.5 seconds
 
 " wrap like other editors
-set wrap				" word wrap
-set textwidth=80		" 
-set formatoptions=tcq	" automatic reformatting of paragraph as  you type
-set lbr					" line break (doesn't work with set list enabled)
-set display=lastline	" don't display @ with long paragraphs
+set wrap				"word wrap
+set textwidth=80		 
+set formatoptions=tcq	"automatic reformatting of paragraph as  you type
+set lbr					"line break (doesn't work with set list enabled)
+set display=lastline	"don't display @ with long paragraphs
 
 " backup settings
-set backup				" keep a backup file
-set backupdir=/tmp		" backup dir
-set directory=/tmp		" swap file directory
+set backup				"keep a backup file
+set backupdir=/tmp		"backup dir
+set directory=/tmp		"swap file directory
 
 " tabs and indenting
-set noexpandtab			  " insert spaces instead of tab chars
-set tabstop=4			" a n-space tab width
-set shiftwidth=4		" allows the use of < and > for VISUAL indenting
-set softtabstop=4		" counts n spaces when DELETE or BCKSPCE is used
-set autoindent			" auto indents next new line
+set noexpandtab			"" insert spaces instead of tab chars
+set tabstop=4			"a n-space tab width
+set shiftwidth=4		"allows the use of < and > for VISUAL indenting
+set softtabstop=4		"counts n spaces when DELETE or BCKSPCE is used
+set autoindent			"auto indents next new line
 " Shortcut to rapidly toggle `set list`
-set list
+" set list
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
-
+" Escape delays:
+ set timeoutlen=100
+ set ttimeoutlen=0
 
 " searching
-set hlsearch			" highlight all search results
-set incsearch			" increment search
-set ignorecase			" case-insensitive search
-set smartcase			" upper-case sensitive search
+set hlsearch		" highlight all search results
+set incsearch		" increment search
+set ignorecase		" case-insensitive search
+set smartcase		" upper-case sensitive search
 
 " Allow the creation of hidden buffers without watning
 set hidden
@@ -64,11 +93,11 @@ set hidden
 if v:version >= 700
 	if has("gui_running")
 		set spell
-		setlocal spell spelllang=en_us
+		setlocal spell spelllang="en_us"
 	endif
 endif
 " syntax highlighting
-syntax on				" enable syntax highlighting
+syntax on			 " enable syntax highlighting
 
 " Key Remapping for multiple windows
 map <C-h> <C-w>h
@@ -95,14 +124,16 @@ if has("autocmd")
 	set background=dark
 	let g:solarized_termcolor=256
 	let g:solarized_termtrans=1
-	" colorscheme solarized
+	let g:vimroom_background="black"
+
+"	 colorscheme solarized
 	colorscheme vividchalk
 
 
-	" Some tricks for mutt
-	" F1 through F3 re-wraps paragraphs in useful ways
+"	 Some tricks for mutt
+"	 F1 through F3 re-wraps paragraphs in useful ways
 	augroup MUTT
-		au BufRead ~/.mutt/temp/mutt* set spell " <-- vim 7 required
+		au BufRead ~/.mutt/temp/mutt* set spell "<-- vim 7 required
 		au BufRead ~/.mutt/temp/mutt* nmap  <F1>	gqap
 		au BufRead ~/.mutt/temp/mutt* nmap  <F2>	gqqj
 		au BufRead ~/.mutt/temp/mutt* nmap  <F3>	kgqj
@@ -111,20 +142,36 @@ if has("autocmd")
 		au BufRead ~/.mutt/temp/mutt* map!  <F3>	<ESC>kgqji
 	augroup END
 
-	" Open odt in vim?
-	au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand("<amatch>"))
-	au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand("<amatch>"))
+	autocmd FileType mail setlocal fo+=aw
 
-	" Syntax of these languages is fussy over tabs Vs spaces
+"	 Open odt in vim?
+	au BufReadCmd *.docx,*.xlsx,*.pptx call zip#Browse(expand(<amatch>"))
+	au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(<amatch>"))
+
+"	 Syntax of these languages is fussy over tabs Vs spaces
 	autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-	" Customisations based on house-style (arbitrary)
+"	 Customisations based on house-style (arbitrary)
 	autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 	autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+	autocmd FileType markdown setlocal ts=4 sts=4 sw=4 expandtab foldnestmax=1
 
-	" Treat .rss files as XML
+"	 Treat .rss files as XML
 	autocmd BufNewFile,BufRead *.rss setfiletype xml
+	autocmd BufNewFile,BufRead *.md setfiletype markdown
+
+	autocmd FileType sxhkdrc set commentstring=#\ %s
 
 endif
+
+" if has("multi_byte")
+  " if &termencoding == "
+    " let &termencoding = &encoding
+  " endif
+  " set encoding=utf-8
+  " setglobal fileencoding=utf-8
+  " setglobal bomb
+  " set fileencodings=ucs-bom,utf-8,latin1
+" endif
