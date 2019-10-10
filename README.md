@@ -12,28 +12,28 @@ I set it up following along the instructions at [Hannu Hatikainen's blog](https:
 ## Instructions:
 
 Make sure `bashrc` is configured to `exec fish` at the top and that `fish` is installed
-[code]
+```bash
 # Install Fisher
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 # Copy the fishfile to the config
 cp dotfiles/fishfile ~/.config/fish/fishfile
 # Load the plugins
 fisher
-[/code]
+```
 
-[code]
+```bash
 # Install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Soft link the tmux config
 ln -s dotfiles/tmux.conf ~/.tmux.conf
-[/code]
+```
 
-[code]
+```bash
 # Install plug-vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ 
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Soft link vimrc
 ln -s dotfiles/vimrc ~/.vimrc
-[/code]
+```
 
